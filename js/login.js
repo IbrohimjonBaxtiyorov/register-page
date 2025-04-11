@@ -9,6 +9,11 @@ elForm.addEventListener("submit", (e) => {
  for(const [key ,value] of formData.entries()){
     result[key]=value;
  }
- console.log(result);
-  // const { target, message } = validator(obj);
+  
+  const checker = validator(result);
+  if(checker){
+    alert(checker.message)
+    e.target[checker.target].focus()
+  }
+  
 });
