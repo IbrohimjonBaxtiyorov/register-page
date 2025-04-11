@@ -1,6 +1,14 @@
-window.addEventListener("load", () => {
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user) {
-    window.location.href = "index.html";
-  }
+import { validator } from "./utils.js";
+const elForm = document.getElementById("form");
+
+elForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(elForm);
+  const result = {};
+
+ for(const [key ,value] of formData.entries()){
+    result[key]=value;
+ }
+ console.log(result);
+  // const { target, message } = validator(obj);
 });

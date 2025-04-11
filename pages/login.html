@@ -10,7 +10,7 @@
     <div class="flex items-center justify-center h-full">
       <div>
         <h1 class="text-center text-5xl font-bold mb-10">Login</h1>
-        <form class="flex flex-col gap-5">
+        <form class="flex flex-col gap-5" id="form">
           <div class="w-sm">
             <label
               for="username"
@@ -18,9 +18,10 @@
               >Foydalanuvchi nomi*</label
             >
             <input
-            placeholder="Foydalanauvchi nomi..."
+              placeholder="Foydalanauvchi nomi..."
               type="text"
               id="username"
+              name="username"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
@@ -32,14 +33,14 @@
               >Maxfiy so'z*</label
             >
             <input
-            placeholder="Maxfiy so'z"
+              placeholder="Maxfiy so'z"
               type="password"
               id="password"
+              name="password"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
-          <button
-            type="button"
+          <button  
             class="gap-2 justify-center cursor-pointer text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2"
           >
             <svg
@@ -60,11 +61,13 @@
             </svg>
             Kirish
           </button>
-          <a class="text-right underline" href="register.html">Ro'yxatdan o'tish</a>
+          <a class="text-right underline" href="register.html"
+            >Ro'yxatdan o'tish</a
+          >
         </form>
       </div>
     </div>
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="../js/login.js" type="module"></script>
   </body>
 </html>
