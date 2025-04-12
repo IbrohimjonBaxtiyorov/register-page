@@ -1,3 +1,4 @@
+import { login } from "./request.js";
 import { validator } from "./utils.js";
 const elForm = document.getElementById("form");
 
@@ -6,14 +7,29 @@ elForm.addEventListener("submit", (e) => {
   const formData = new FormData(elForm);
   const result = {};
 
- for(const [key ,value] of formData.entries()){
-    result[key]=value;
- }
-  
-  const checker = validator(result);
-  if(checker){
-    alert(checker.message)
-    e.target[checker.target].focus()
+  for (const [key, value] of formData.entries()) {
+    result[key] = value;
   }
-  
+
+  const checker = validator(result);
+  if (checker) {
+    alert(checker.message);
+    e.target[checker.target].focus();
+  } else {
+    e.target.dataset.steate = "pending";
+    e.submitter.disabled = "true";
+    login(result)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        e.target.dataset.steate = "normal";
+        e.submitter.disabled = "false";
+        console.log(res);
+        
+      });
+  }
 });

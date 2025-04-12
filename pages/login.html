@@ -10,7 +10,7 @@
     <div class="flex items-center justify-center h-full">
       <div>
         <h1 class="text-center text-5xl font-bold mb-10">Login</h1>
-        <form class="flex flex-col gap-5" id="form">
+        <form class="flex flex-col gap-5 group login-form" id="form" data-steate="normal">
           <div class="w-sm">
             <label
               for="username"
@@ -41,11 +41,13 @@
             />
           </div>
           <button  
-            class="gap-2 justify-center cursor-pointer text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2"
+          disabled="true"
+          type="submit"
+          class="gap-2 justify-center cursor-pointer disabled:opacity-45 disabled:cursor-not-allowed text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2"
           >
             <svg
               aria-hidden="true"
-              class="w-8 h-8 animate-spin fill-slate-600"
+              class="w-8 h-8 animate-spin hidden fill-slate-600 "
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

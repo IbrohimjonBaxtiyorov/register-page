@@ -2,3 +2,7 @@
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
+
+.login-form[data-steate='pending']> button >svg{
+    @apply inline-block;
+}
