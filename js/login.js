@@ -25,7 +25,7 @@ elForm.addEventListener("submit", (e) => {
 
     login(result)
       .then((res) => {
-       showToast("muvafiqiyatli saqlandi")
+       showToast("Saytga muvofaqiyatli kirdingiz")
       })
       .catch((err) => {
       showToast("nimadir xato ketdi",'warning')

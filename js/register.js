@@ -1,4 +1,4 @@
-import { login } from "./request.js";
+import { register } from "./request.js";
 import { validator } from "./utils.js";
 import { showToast } from "./toasts.js";
 const elForm = document.getElementById("form");
@@ -23,7 +23,7 @@ elForm.addEventListener("submit", (e) => {
     e.target.dataset.steate = "pending";
     e.submitter.disabled = true;
 
-    login(result)
+    register(result)
       .then((res) => {
        showToast("muvafiqiyatli saqlandi")
       })

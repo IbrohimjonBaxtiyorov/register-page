@@ -25,12 +25,7 @@ export async function register (user) {
      body: JSON.stringify(user),
    })
    const res = await req.json()
-   if(req.status===200){
-     return res
-   }else{
-     throw new Error("Hatolik bo'ldi")
-   }
-   
+  return res
     
  }
  
