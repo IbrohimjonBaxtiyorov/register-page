@@ -1,9 +1,11 @@
 import { login } from "./request.js";
 import { validator } from "./utils.js";
+import { showToast } from "./toasts.js";
 const elForm = document.getElementById("form");
 
 elForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const formData = new FormData(elForm);
   const result = {};
 
@@ -13,23 +15,25 @@ elForm.addEventListener("submit", (e) => {
 
   const checker = validator(result);
   if (checker) {
-    alert(checker.message);
+    showToast(checker.message,'danger')
     e.target[checker.target].focus();
+
   } else {
+
     e.target.dataset.steate = "pending";
-    e.submitter.disabled = "true";
+    e.submitter.disabled = true;
+
     login(result)
       .then((res) => {
-        console.log(res);
+       showToast("muvafiqiyatli saqlandi")
       })
       .catch((err) => {
-        console.log(err);
+      showToast("nimadir xato ketdi",'warning')
       })
       .finally(() => {
         e.target.dataset.steate = "normal";
-        e.submitter.disabled = "false";
-        console.log(res);
-        
+        e.submitter.disabled = false;
       });
-  }
+   }
+   
 });
