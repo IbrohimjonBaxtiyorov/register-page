@@ -25,7 +25,9 @@ elForm.addEventListener("submit", (e) => {
 
     register(result)
       .then((res) => {
-       showToast("muvafiqiyatli saqlandi")
+       showToast("muvafiqiyatli saqlandi");
+       localStorage.setItem("user",JSON.stringify(res))
+       window.location.href = "/index.html";
       })
       .catch((err) => {
       showToast("nimadir xato ketdi",'warning')

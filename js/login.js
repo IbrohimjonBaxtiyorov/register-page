@@ -25,7 +25,9 @@ elForm.addEventListener("submit", (e) => {
 
     login(result)
       .then((res) => {
-       showToast("Saytga muvofaqiyatli kirdingiz")
+       showToast("Saytga muvofaqiyatli kirdingiz");
+       localStorage.setItem("user" ,JSON.stringify(res))
+       window.location.href = "/index.html";
       })
       .catch((err) => {
       showToast("nimadir xato ketdi",'warning')

@@ -6,7 +6,6 @@
     toast.classList.remove('hidden');
     toast.classList.add('flex');
 
-    // 3 soniyadan keyin avtomatik yopiladi
     setTimeout(() => {
        hideToast(toastId)
     }, 3000);
