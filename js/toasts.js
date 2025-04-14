@@ -1,3 +1,4 @@
+
  export function showToast(message = "Xabar yuborildi!" ,toastId='success') {
     const toast = document.getElementById(`toast-${toastId}`);
     const text = toast.querySelector('.text-sm');

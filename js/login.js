@@ -1,6 +1,7 @@
 import { login } from "./request.js";
 import { validator } from "./utils.js";
 import { showToast } from "./toasts.js";
+import "./protector.js";
 const elForm = document.getElementById("form");
 
 elForm.addEventListener("submit", (e) => {
@@ -15,27 +16,26 @@ elForm.addEventListener("submit", (e) => {
 
   const checker = validator(result);
   if (checker) {
-    showToast(checker.message,'danger')
+    showToast(checker.message, "danger");
     e.target[checker.target].focus();
 
   } else {
-
+    
     e.target.dataset.steate = "pending";
     e.submitter.disabled = true;
 
     login(result)
       .then((res) => {
-       showToast("Saytga muvofaqiyatli kirdingiz");
-       localStorage.setItem("user" ,JSON.stringify(res))
-       window.location.href = "/index.html";
+        showToast("Saytga muvofaqiyatli kirdingiz");
+        localStorage.setItem("user", JSON.stringify(res));
+        window.location.replace("/index.html");
       })
       .catch((err) => {
-      showToast("nimadir xato ketdi",'warning')
+        showToast("nimadir xato ketdi", "warning");
       })
       .finally(() => {
         e.target.dataset.steate = "normal";
         e.submitter.disabled = false;
       });
-   }
-   
+  }
 });

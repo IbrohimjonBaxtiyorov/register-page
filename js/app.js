@@ -1,3 +1,5 @@
+import "./protector.js"
+
 window.addEventListener("load", () => {
   const user = JSON.parse(localStorage.getItem("user"));
   if (user === null) {
