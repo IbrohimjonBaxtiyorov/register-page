@@ -1,4 +1,4 @@
 const elForm = document.getElementById("form");
+const elLoader=document.getElementById("loader")
 
-
-export{elForm}
+export{elForm ,elLoader}
