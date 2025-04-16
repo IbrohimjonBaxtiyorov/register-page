@@ -976,8 +976,17 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .right-1 {
+    right: calc(var(--spacing) * 1);
+  }
+  .right-2 {
+    right: calc(var(--spacing) * 2);
+  }
   .right-5 {
     right: calc(var(--spacing) * 5);
+  }
+  .right-auto {
+    right: auto;
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
@@ -1333,6 +1342,9 @@
       border: 1px solid var(--color-gray-700);
       color: white;
     }
+  }
+  .mr-3 {
+    margin-right: calc(var(--spacing) * 3);
   }
   .apexcharts-tooltip-title {
     .apexcharts-canvas .apexcharts-tooltip & {
@@ -2011,9 +2023,6 @@
   .bg-red-100 {
     background-color: var(--color-red-100);
   }
-  .bg-red-700 {
-    background-color: var(--color-red-700);
-  }
   .bg-slate-100 {
     background-color: var(--color-slate-100);
   }
@@ -2171,9 +2180,6 @@
   }
   .text-center {
     text-align: center;
-  }
-  .text-right {
-    text-align: right;
   }
   .text-5xl {
     font-size: var(--text-5xl);

@@ -1,8 +1,8 @@
 import { login } from "./request.js";
 import { validator } from "./utils.js";
 import { showToast } from "./toasts.js";
+import { elForm } from "./html-elements.js";
 import "./protector.js";
-const elForm = document.getElementById("form");
 
 elForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -32,6 +32,8 @@ elForm.addEventListener("submit", (e) => {
       })
       .catch((err) => {
         showToast("nimadir xato ketdi", "warning");
+        console.log(err);
+        
       })
       .finally(() => {
         e.target.dataset.steate = "normal";
