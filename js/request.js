@@ -35,7 +35,7 @@ export async function addProduct(obj) {
 
 export async function deleteProduct(id) {
   const token = JSON.parse(localStorage.getItem("user"))?.access_token;
-  const req = await fetch(`https://json-api.uz/api/project/fn37/cars${id}`, {
+  const req = await fetch(`https://json-api.uz/api/project/fn37/cars/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,

@@ -41,12 +41,12 @@ export async function  localaddProduct(what, where) {
   }
 }
 
-export async function  localremoveProduct(id, where) {
-  const result = where.filter((element) => element.id !== id);
+export  function  localremoveProduct(id, where) {
+  const result = where.filter((element) => element.id !== +id);
   return result;
 }
 
-export async function  localudeateProduct(what, where) {
+export function  localudeateProduct(what, where) {
   const result = where.map((element) => {
     if (what.id === element.id) {
       return what;
