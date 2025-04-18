@@ -12,9 +12,27 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="p-5 bg-slate-200 ">
+  <body class="p-5 bg-slate-200">
+    <div class="flex justify-between items-center">
+      <h1 class="py-5 text-5xl text-center font-bold">Find Your Dream Car</h1>
+      <div>
+        <button
+        id="add-but"
+          type="button"
+          class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+        >
+          ADD
+        </button>
 
-    <h1 class="py-5 text-5xl text-center font-bold">Find Your Dream Car</h1>
+        <button
+        id="log-out"
+          type="button"
+          class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+        >
+          LOG OUT
+        </button>
+      </div>
+    </div>
 
     <!-- Skeletons -->
     <div id="loader" class="grid grid-cols-4 gap-10">
@@ -131,7 +149,7 @@
       </div>
     </div>
 
-    <ul class="grid  grid-cols-4 gap-10" id="list"></ul>
+    <ul class="grid grid-cols-4 gap-10" id="list"></ul>
 
     <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
     <script src="js/app.js" type="module"></script>

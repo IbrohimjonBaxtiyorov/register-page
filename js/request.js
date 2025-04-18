@@ -23,7 +23,7 @@ export async function addProduct(obj) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(user),
+    body: JSON.stringify(obj),
   });
   const res = await req.json();
   if (req.status === 200) {

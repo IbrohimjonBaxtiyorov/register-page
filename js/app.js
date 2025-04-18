@@ -1,5 +1,5 @@
 import { changer, products } from "./data.js";
-import { elList } from "./html-elements.js";
+import { eladdButton, elList, elLoguout } from "./html-elements.js";
 import "./protector.js";
 import { deleteProduct, getProduct } from "./request.js";
 import { uiRender } from "./ui-render.js";
@@ -22,4 +22,15 @@ elList.addEventListener("click",(e)=>{
   .finally()
  }
  
+})
+
+// login out buttoni
+elLoguout.addEventListener("click",()=>{
+  localStorage.removeItem("user");
+  location.reload()
+})
+
+// add saxifasiga o'tuvchi button
+eladdButton.addEventListener("click",()=>{
+  window.location.href="smth.html"
 })

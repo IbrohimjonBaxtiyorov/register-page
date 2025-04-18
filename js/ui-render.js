@@ -73,8 +73,10 @@ export function uiRender(products) {
 
     p.innerText = `${element.description}`;
     h5.innerText =`${ element.name}`;
-    span.innerText =`${element.price}`;
+    span.innerText =`$ ${element.price}`;
     button.href = "#";
+    button.id=element.id;
+    button.dataset.action="delete"
     button.innerText = "DELETE";
     div2.append(a, p);
     div2.append(span);
