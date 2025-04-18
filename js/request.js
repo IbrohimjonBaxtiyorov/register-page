@@ -29,7 +29,7 @@ export async function addProduct(obj) {
   if (req.status === 200) {
     return res;
   } else {
-    throw new Error("Hatolik bo'ldi");
+    throw new Error(res.message,"Hatolik bo'ldi");
   }
 }
 

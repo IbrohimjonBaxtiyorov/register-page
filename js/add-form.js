@@ -1,6 +1,6 @@
 import { elAddForm } from "./html-elements.js";
 import { addProduct } from "./request.js";
-import { validator } from "./utils.js";
+import { validator2 } from "./utils.js";
 import { showToast } from "./toasts.js";
 import "./protector.js";
 
@@ -18,7 +18,7 @@ elAddForm.addEventListener("submit", (e) => {
   }
 console.log(result);
 
-  const checker = validator(result);
+  const checker = validator2(result);
   if (checker) {
     showToast(checker.message, "danger");
     e.target[checker.target].focus();

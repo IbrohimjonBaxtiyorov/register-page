@@ -12,6 +12,11 @@ export function validator(obj) {
       message: "Foydalanuvchi paroli bo'sh bo'lishi mumkin emas",
     };
   }
+
+  return false;
+}
+
+export function validator2(obj) {
   if (obj.name.trim() === "") {
     return {
       target: "name",
