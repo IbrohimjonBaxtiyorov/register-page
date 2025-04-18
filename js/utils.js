@@ -12,19 +12,19 @@ export function validator(obj) {
       message: "Foydalanuvchi paroli bo'sh bo'lishi mumkin emas",
     };
   }
-  if (obj.name === "") {
+  if (obj.name.trim() === "") {
     return {
       target: "name",
       message: "Mashina nomi bo'sh bo'lishi mumkin emas",
     };
   }
-  if (obj.description === "") {
+  if (obj.description.trim() === "") {
     return {
       target: "description",
       message: "Mashina malumoti bo'sh bo'lishi mumkin emas ",
     };
   }
-  if (obj.price === "") {
+  if (obj.price.trim() === "") {
     return {
       target: "price",
       message: "Mashina narxi bo'sh bo'lishi mumkin emas",
@@ -47,7 +47,6 @@ export async function localgetProduct() {
 
 export async  function localaddProduct(what, where) {
   const result = [...where, what];
-  return result;
   where.push(what);
   const req = await fetch(`https://json-api.uz/api/project/fn37/cars`);
   const res = await req.json();

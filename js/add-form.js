@@ -8,8 +8,7 @@ import "./protector.js";
 
 elAddForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(e.target);
-
+ 
 
   const formData = new FormData(elAddForm);
   const result = {};
@@ -17,6 +16,7 @@ elAddForm.addEventListener("submit", (e) => {
   for (const [key, value] of formData.entries()) {
     result[key] = value;
   }
+console.log(result);
 
   const checker = validator(result);
   if (checker) {
@@ -28,11 +28,10 @@ elAddForm.addEventListener("submit", (e) => {
     e.target.dataset.steate = "pending";
     e.submitter.disabled = true;
 
-    addProduct(result)
+    addProduct(checker)
       .then((res) => {
         showToast("Muvofaqiyatli Saqlandi");
-        localStorage.setItem("user", JSON.stringify(res));
-      })
+          })
       .catch((err) => {
         showToast("nimadir xato ketdi", "warning");
         
