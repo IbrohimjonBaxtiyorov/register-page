@@ -1,8 +1,7 @@
-import { eladdButton, elAddForm } from "./html-elements.js";
+import { elAddForm } from "./html-elements.js";
 import { addProduct } from "./request.js";
 import { validator } from "./utils.js";
 import { showToast } from "./toasts.js";
-import { elForm } from "./html-elements.js";
 import "./protector.js";
 
 
@@ -10,7 +9,7 @@ import "./protector.js";
 elAddForm.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(e.target);
-  console.log(elAddForm);
+
 
   const formData = new FormData(elAddForm);
   const result = {};

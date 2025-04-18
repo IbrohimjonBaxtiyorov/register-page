@@ -6,7 +6,6 @@ import "./protector.js";
 
 elForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const formData = new FormData(elForm);
   const result = {};
 
